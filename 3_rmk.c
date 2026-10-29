@@ -7,14 +7,14 @@ int main(void)
     scanf ("%lf", &x);
     
     FILE *f = fopen("3_rmk_data.txt", "r");
-    if (f == NULL) // Исправили на ==
+    if (f == NULL) 
     {
         printf ("file error\n");
         return -1;
     }
     
     double a = func(x, f);        
-    double b = func_proizv(x, f); 
+    double b = g_deriv;
     
     printf ("%lf\n", a);
     printf ("%lf\n", b);
