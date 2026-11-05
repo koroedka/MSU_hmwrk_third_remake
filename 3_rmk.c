@@ -4,21 +4,24 @@
 int main(void)
 {
     double x;
-    scanf ("%lf", &x);
-    
-    FILE *f = fopen("3_rmk_data.txt", "r");
-    if (f == NULL) 
+    FILE *f;
+    double a, b;             
+
+    scanf("%lf", &x);
+
+    f = fopen("3_rmk_data.txt", "r");
+    if (f == NULL)
     {
-        printf ("file error\n");
+        printf("file error\n");
         return -1;
     }
-    
-    double a = func(x, f);        
-    double b = g_deriv;
-    
-    printf ("%lf\n", a);
-    printf ("%lf\n", b);
-    
+
+    a = func(x, f);       
+    b = g_deriv;
+
+    printf("%lf\n", a);
+    printf("%lf\n", b);
+
     fclose(f);
     return 0;
 }
